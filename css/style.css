@@ -23,12 +23,27 @@ a:hover{
 .navbar-text .form-control, .navbar-text .btn{
     border-radius: 0;
 }
-
+/*小屏幕*/
+@media (max-width: 768px) {
+    .navbar-nav{
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        flex-direction:row;
+    }
+    .navbar-text ,.navbar-text .form-control ,.navbar-text .form-group{
+        width: 100%;
+    }
+    .navbar-text .btn{
+        float: right;
+        margin-top: 1rem;
+        width: 10rem;
+    }
+}
 /*导航样式 end*/
 /**************************************************/
 /**************************************************/
 /*首页样式 start*/
-
 /*大屏幕s*/
 @media (min-width: 1300px) {
  .navbar-brand{

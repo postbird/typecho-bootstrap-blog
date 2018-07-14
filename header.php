@@ -88,7 +88,7 @@
                 <span class="navbar-text">
                     <form method="post" action="" class="form-inline">
                         <div class="form-group">
-                            <input type="text" name="s" class="form-control form-control-sm" />
+                            <input type="search" name="s" class="form-control form-control-sm" />
                             <button class="btn btn-info btn-sm">搜索</button>
                         </div>
                     </form>
