@@ -158,6 +158,9 @@ a:hover{
 #secondary .comment-item{
     font-size:14px;
 }
+#secondary .list-group-item.list-group-item-info{
+    background-color: #fcfcfc;
+}
 .widget{
     margin-bottom: 2rem;
 }
