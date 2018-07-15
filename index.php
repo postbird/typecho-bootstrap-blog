@@ -17,7 +17,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <article class="post-wrapper" itemscope itemtype="http://schema.org/BlogPosting">
            <div class="row">
                <div class="col-md-12">
-                   <h3><a class="title-link" itemprop="url" title="<?php $this->title() ?>" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h3>
+                   <h3><a class="title-link" itemprop="url" title="<?php $this->title() ?>" href="<?php $this->permalink() ?>"><?php $this->sticky(); $this->title(); ?></a></h3>
                </div>
                <div class="col-md-4 ">
                    <?php if(get_postthumb($this)) {?>
@@ -55,7 +55,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         </article>
 	<?php endwhile; ?>
     <nav  aria-label="Page navigation ">
-        <?php $this->pageNav('«', '»', 1, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination', 'itemTag' => 'li', 'itemClass'=>'page-item', 'textTag' => 'span', 'currentClass' => 'active', 'prevClass' => 'prev', 'nextClass' => 'next',)); ?>
+        <?php $this->pageNav('«', '»', 1, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination', 'itemTag' => 'li', 'itemClass'=>'page-item', 'textTag' => 'a', 'currentClass' => 'active', 'prevClass' => 'prev', 'nextClass' => 'next',)); ?>
     </nav>
 
 </div><!-- end #main-->
