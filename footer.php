@@ -1,9 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-
-        </div><!-- end .row -->
-    </div>
-</div><!-- end #body -->
-<a class="to-top">
+<a class="to-top" style="z-index: 1200;">
     <img src="<?php  $this->options->themeUrl('img/top.svg')?>" alt="返回顶部" title="返回顶部">
 </a>
 <div class="container">

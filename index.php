@@ -18,7 +18,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
            <div class="row">
                <div class="col-md-4 col-xs-4">
                    <?php if(get_postthumb($this)) {?>
-                       <img src="<?php echo get_postthumb($this) ?>" alt="文章缩略图" class="post-thumb-image img-thumbnail">
+                       <a href="<?php $this->permalink() ?>">
+                           <img src="<?php echo get_postthumb($this) ?>" alt="文章缩略图" class="post-thumb-image img-thumbnail">
+                       </a>
                    <?php }else{?>
                        <div class="no-thumb-image">
                            <span>暂无缩略图</span>

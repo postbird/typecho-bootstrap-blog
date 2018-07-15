@@ -30,7 +30,7 @@
 
 <!-- 边栏显示文章分类 默认开启-->
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowCategory', $this->options->sidebarBlock)): ?>
-    <section class="widget">
+    <section class="widget post-category" >
         <ul class="list-group">
             <li class="list-group-item list-group-item-info"><span><?php _e('文章分类'); ?></span></li>
         </ul>
@@ -54,7 +54,7 @@
     <?php if (!empty($this->options->sidebarBlock) && in_array('ShowOther', $this->options->sidebarBlock)): ?>
 	<section class="widget">
         <ul class="list-group">
-            <li class="list-group-item list-group-item-info"><span><?php _e('文章分类'); ?></span></li>
+            <li class="list-group-item list-group-item-info"><span><?php _e('其他'); ?></span></li>
             <?php if($this->user->hasLogin()): ?>
                 <li class="list-group-item">
                     <a href="<?php $this->options->adminUrl(); ?>"><?php _e('进入后台'); ?> (<?php $this->user->screenName(); ?>)</a>

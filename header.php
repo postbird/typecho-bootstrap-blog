@@ -23,12 +23,13 @@
 
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/prism.css'); ?>">
     <script src="<?php $this->options->themeUrl('js/jquery-2.2.1.min.js'); ?>"></script>
     <script src="<?php $this->options->themeUrl('js/popper.min.js'); ?>"></script>
     <script src="<?php $this->options->themeUrl('js/bootstrap.min.js'); ?>"></script>
     <script src="<?php $this->options->themeUrl('js/jquery.goup.min.js'); ?>"></script>
+    <script src="<?php $this->options->themeUrl('js/prism.js'); ?>"></script>
     <script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
-
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -47,54 +48,44 @@
 <header id="header" class="clearfix">
     <?php //print_r($this);?>
     <nav class="navbar navbar-dark bg-dark navbar-expand-md">
-        <?php if ($this->options->logoUrl) { ?>
-            <a class="navbar-brand" href="<?php $this->options->siteUrl() ?>"
-               title="<?php $this->options->description() ?>">
-                <img src="<?php $this->options->logoUrl() ?>" alt="logo" class="navbar-logo">
-            </a>
-        <?php } else { ?>
-            <a class="navbar-brand" href="<?php $this->options->siteUrl() ?>"
-               title="<?php $this->options->description() ?>"><?php $this->options->title() ?></a>
-        <?php } ?>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="container">
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="<?php $this->options->siteUrl()?>">首页 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">分类</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">归档</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">标签</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">留言</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">友链</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">关于</a>
-                    </li>
-                </ul>
-                <span class="navbar-text">
-                    <form method="post" action="" class="form-inline">
-                        <div class="form-group">
-                            <input type="search" name="s" class="form-control form-control-sm" />
-                            <button class="btn btn-info btn-sm">搜索</button>
-                        </div>
-                    </form>
-                 </span>
+                <?php if ($this->options->logoUrl) { ?>
+                    <a class="navbar-brand" href="<?php $this->options->siteUrl() ?>"
+                       title="<?php $this->options->description() ?>">
+                        <img src="<?php $this->options->logoUrl() ?>" alt="logo" class="navbar-logo">
+                    </a>
+                <?php } else { ?>
+                    <a class="navbar-brand" href="<?php $this->options->siteUrl() ?>"
+                       title="<?php $this->options->description() ?>"><?php $this->options->title() ?></a>
+                <?php } ?>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="<?php $this->options->siteUrl() ?>">首页 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+                        <?php while ($pages->next()): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php $pages->permalink(); ?>"
+                                   title="<?php $pages->title(); ?>"><span><?php $pages->title(); ?></span></a>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                    <div class="navbar-text">
+                        <form method="post" action="" class="search-form form-inline">
+                            <div class="form-group">
+                                <input type="search" name="s" class="form-control form-control-sm"/>
+                                <button class="btn btn-info btn-sm">搜索</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
             </div>
-        </div>
     </nav>
 </header><!-- end #header -->
 <div id="body">
