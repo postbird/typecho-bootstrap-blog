@@ -16,7 +16,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	<?php while($this->next()): ?>
         <article class="post-wrapper" itemscope itemtype="http://schema.org/BlogPosting">
            <div class="row">
-               <div class="col-md-4 col-xs-4">
+               <div class="col-md-12">
+                   <h3><a class="title-link" itemprop="url" title="<?php $this->title() ?>" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h3>
+               </div>
+               <div class="col-md-4 ">
                    <?php if(get_postthumb($this)) {?>
                        <a href="<?php $this->permalink() ?>">
                            <img src="<?php echo get_postthumb($this) ?>" alt="文章缩略图" class="post-thumb-image img-thumbnail">
@@ -27,8 +30,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                        </div>
                    <?php } ?>
                </div>
-               <div class="col-md-8 col-xs-8">
-                   <h3><a class="title-link" itemprop="url" title="<?php $this->title() ?>" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h3>
+               <div class="col-md-8">
+
 <!--                   <hr>-->
                    <div class="post-content" itemprop="articleBody">
                         <?php $this->excerpt(100, '...'); ?>
