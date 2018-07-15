@@ -55,7 +55,7 @@
                 <p><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t('已有 %d 条评论')); ?></p>
                 <?php $comments->listComments(); ?>
                 <nav  aria-label="Page navigation text-center">
-                    <?php $comments->pageNav('«', '»', 1, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination', 'itemTag' => 'li', 'itemClass'=>'page-item', 'textTag' => 'span', 'currentClass' => 'active', 'prevClass' => 'prev', 'nextClass' => 'next',)); ?>
+                    <?php $comments->pageNav('«', '»', 1, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination', 'itemTag' => 'li', 'itemClass'=>'page-item', 'textTag' => 'a', 'currentClass' => 'active', 'prevClass' => 'prev', 'nextClass' => 'next',)); ?>
                 </nav>
             <?php endif; ?>
 
