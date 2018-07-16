@@ -2,6 +2,8 @@
 
 基于 bootstrap 4 开发的 typecho 响应式两栏博客主题
 
+预览：[http://theme.typecho.ptbird.cn/bootstrap-blog/](http://theme.typecho.ptbird.cn/bootstrap-blog/)
+
 ## 一、主题说明
 
 ### 1、依赖
@@ -24,7 +26,7 @@
 
 - 新增 `themeFields`，用户可自己添加备案、头部样式和底部脚本等内容
 - 修复 CDN 链接中 `popper.js` 错误的问题，优化代码结构
--
+- 用户在后台可设置是否启用`公共CDN链接`
 
 ## 二、主题安装
 
