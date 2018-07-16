@@ -37,6 +37,13 @@
 
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
+
+    <!-- 用户自定义 stylesheet -->
+    <style>
+        <?php if($this->options->postbirdStylesheet) { ?>
+        <?php $this->options->postbirdStylesheet() ?>
+        <?php } ?>
+    </style>
 </head>
 <body>
 <!--[if lt IE 8]>

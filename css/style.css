@@ -429,7 +429,7 @@ template {
 /**************************************************/
 /*公共样式 start*/
 body {
-    background-color: #f6f6f6 !important;
+    background-color: #f6f6f6;
 }
 
 a {
