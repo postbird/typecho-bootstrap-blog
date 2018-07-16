@@ -20,7 +20,7 @@ function themeConfig($form) {
 
     $postbirdUseCDNSelect = new Typecho_Widget_Helper_Form_Element_Checkbox('postbirdUseCDNSelect',
         array('postbirdUseCDN' => _t('启用')),
-        array('postbirdUseCDN'), _t('使用公共CDN加载部分资源'));
+        array('postbirdUseCDN'), _t('使用公共CDN加载部分资源'),_t('开启后,bootstrap/jquery/popper.js 将从 bootcdn 加载'));
     $form->addInput($postbirdUseCDNSelect);
 
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
