@@ -18,6 +18,11 @@ function themeConfig($form) {
     $postbirdScript = new Typecho_Widget_Helper_Form_Element_Textarea('postbirdScript', NULL, NULL, _t('自定义脚本'), _t('脚本会在页面底部加载,可以将百度统计等第三方脚本放在这里,<span style="color:red;">必须使用 script 标签包裹</span>'));
     $form->addInput($postbirdScript);
 
+    $postbirdUseCDNSelect = new Typecho_Widget_Helper_Form_Element_Checkbox('postbirdUseCDNSelect',
+        array('postbirdUseCDN' => _t('启用')),
+        array('postbirdUseCDN'), _t('使用公共CDN加载部分资源'));
+    $form->addInput($postbirdUseCDNSelect);
+
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
     array('ShowRecentPosts' => _t('显示最新文章'),
     'ShowRecentComments' => _t('显示最近回复'),

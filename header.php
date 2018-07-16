@@ -14,28 +14,31 @@
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
 
     <!-- 使用url函数转换相关路径 -->
-    <!--  默认不使用 cdn 的链接-->
-    <!--  上线的话可以直接使用 cdn 的链接，将下面的所有取消注释，本地连接注释掉即可，-->
-<!--    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">-->
-<!--    <link rel="stylesheet" href="--><?php //$this->options->themeUrl('css/style.css'); ?><!--">-->
-<!--    <link rel="stylesheet" href="--><?php //$this->options->themeUrl('css/prism.css'); ?><!--">-->
-<!--    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>-->
-<!--    <script src="https://cdn.bootcss.com/popper.js/1.14.3/umd/popper.min.js"></script>-->
-<!--    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>-->
-<!--    <script src="--><?php //$this->options->themeUrl('js/jquery.goup.min.js'); ?><!--"></script>-->
-<!--    <script src="--><?php //$this->options->themeUrl('js/prism.js'); ?><!--"></script>-->
-<!--    <script src="--><?php //$this->options->themeUrl('js/app.js'); ?><!--"></script>-->
+    <!-- 判断是否使用 CDN 加载基础资源-->
+    <?php if (!empty($this->options->postbirdUseCDNSelect) && in_array('postbirdUseCDN', $this->options->postbirdUseCDNSelect)){ ?>
+    <!-- 使用 CDN-->
+        <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
+        <link rel="stylesheet" href="<?php $this->options->themeUrl('css/prism.css'); ?>">
+        <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="<?php $this->options->themeUrl('js/jquery.goup.min.js'); ?>"></script>
+        <script src="<?php $this->options->themeUrl('js/prism.js'); ?>"></script>
+        <script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
+    <?php }else{ ?>
+        <!-- 不使用 CDN-->
+        <link rel="stylesheet" href="<?php $this->options->themeUrl('css/bootstrap.min.css'); ?>">
+        <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
+        <link rel="stylesheet" href="<?php $this->options->themeUrl('css/prism.css'); ?>">
+        <script src="<?php $this->options->themeUrl('js/jquery-2.2.1.min.js'); ?>"></script>
+        <script src="<?php $this->options->themeUrl('js/popper.min.js'); ?>"></script>
+        <script src="<?php $this->options->themeUrl('js/bootstrap.min.js'); ?>"></script>
+        <script src="<?php $this->options->themeUrl('js/jquery.goup.min.js'); ?>"></script>
+        <script src="<?php $this->options->themeUrl('js/prism.js'); ?>"></script>
+        <script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
 
-    <!--  默认使用本地链接，如果要使用 cdn 链接，请注释掉下面代码-->
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/bootstrap.min.css'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/prism.css'); ?>">
-    <script src="<?php $this->options->themeUrl('js/jquery-2.2.1.min.js'); ?>"></script>
-    <script src="<?php $this->options->themeUrl('js/popper.min.js'); ?>"></script>
-    <script src="<?php $this->options->themeUrl('js/bootstrap.min.js'); ?>"></script>
-    <script src="<?php $this->options->themeUrl('js/jquery.goup.min.js'); ?>"></script>
-    <script src="<?php $this->options->themeUrl('js/prism.js'); ?>"></script>
-    <script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
+    <?php } ?>
 
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
