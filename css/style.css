@@ -486,6 +486,9 @@ a:hover {
     background-color: #467B96;
     border-color: #007bff;
 }
+.center-pagination .pagination{
+    justify-content: center;
+}
 
 /*分页样式 end*/
 /**************************************************/

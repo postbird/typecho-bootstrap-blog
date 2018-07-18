@@ -46,11 +46,13 @@
                 <h2 class="post-title"><?php _e('没有找到内容'); ?></h2>
             </article>
         <?php endif; ?>
-
-        <nav  aria-label="Page navigation ">
-            <?php $this->pageNav('«', '»', 1, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination', 'itemTag' => 'li', 'itemClass'=>'page-item', 'textTag' => 'a', 'currentClass' => 'active', 'prevClass' => 'prev', 'nextClass' => 'next',)); ?>
-        </nav>
     </div><!-- end #main -->
-
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <nav  aria-label="Page navigation " class="center-pagination">
+                <?php $this->pageNav('«', '»', 1, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination', 'itemTag' => 'li', 'itemClass'=>'page-item', 'textTag' => 'a', 'currentClass' => 'active', 'prevClass' => 'prev', 'nextClass' => 'next',)); ?>
+            </nav>
+        </div>
+    </div>
 <!--	--><?php //$this->need('sidebar.php'); ?>
 	<?php $this->need('footer.php'); ?>
