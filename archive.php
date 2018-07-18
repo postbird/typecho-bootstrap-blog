@@ -47,7 +47,9 @@
             </article>
         <?php endif; ?>
 
-        <?php $this->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
+        <nav  aria-label="Page navigation ">
+            <?php $this->pageNav('«', '»', 1, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination', 'itemTag' => 'li', 'itemClass'=>'page-item', 'textTag' => 'a', 'currentClass' => 'active', 'prevClass' => 'prev', 'nextClass' => 'next',)); ?>
+        </nav>
     </div><!-- end #main -->
 
 <!--	--><?php //$this->need('sidebar.php'); ?>
