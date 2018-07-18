@@ -16,7 +16,7 @@
             <div itemprop="keywords" class="tags"><?php _e('标签： '); ?><?php $this->tags(' ', true, 'none'); ?></div>
         </div>
         <div class="post-well" style="background-color:#f6f6f6;padding:10px;margin-bottom: 10px;white-space: nowrap;">
-            <p>文章版权：<a style="color:#15A7F0;" href="http://www.ptbird.cn">Postbird-There I am , in the world more exciting!</a></p>
+            <p>文章版权：<a style="color:#15A7F0;" href="<?php $this->options->siteUrl() ?>"><?php $this->options->title() ?> - <?php $this->options->description() ?> </a></p>
             <p>本文链接：<a  style="color:#15A7F0;"href="<?php $this->permalink() ?>"><?php $this->permalink() ?></a></p>
             <p>转载请注明文章原始出处 !</p>
         </div>
